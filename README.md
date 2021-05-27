@@ -1,16 +1,7 @@
 # quasar_music_player
 
-A Flutter music player
+A Flutter app simple music player to implement the MVC+S architecture using Providers as State Management.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![LogIn](https://github.com/hassan1709/snapshots/blob/main/Screenshot_20210527-102057.png)
