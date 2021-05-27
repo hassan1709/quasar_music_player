@@ -1,6 +1,8 @@
 # quasar_music_player
 
-A Flutter app simple music player to implement the MVC+S architecture using Providers as State Management.
+A Flutter app simple music player to implement the MVC+S architecture using Providers as State Management. 
+
+See more details of this arc follow this link https://blog.gskinner.com/archives/2020/09/flutter-state-management-with-mvcs.html
 
 ## Getting Started
 
