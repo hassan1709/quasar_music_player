@@ -28,9 +28,6 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           title: Text(
             'Quasar Music Player',
-            style: TextStyle(
-              color: Theme.of(context).primaryTextTheme.headline1.color,
-            ),
           ),
           elevation: 1.0,
         ),
@@ -40,12 +37,13 @@ class HomeScreen extends StatelessWidget {
             //Playlist
             Expanded(
               child: ListView.builder(
-                itemCount: tracks != null ? tracks.length : 0,
+                itemCount: tracks.length,
                 itemBuilder: (_, index) => TrackWidget(tracks[index]),
               ),
             ),
             //Player
-            if (Provider.of<Player>(context, listen: true).playerVisibility) PlayerWidget(),
+            if (Provider.of<Player>(context, listen: true).playerVisibility)
+              PlayerWidget(),
           ],
         ),
       ),

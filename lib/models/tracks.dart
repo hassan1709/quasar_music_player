@@ -3,7 +3,7 @@ import 'track.dart';
 
 class Tracks extends ChangeNotifier {
   List<Track> _tracks = [];
-  int _selectedTrackId;
+  int _selectedTrackId = -1;
 
   List<Track> get tracks {
     return _tracks;

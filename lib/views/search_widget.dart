@@ -41,10 +41,10 @@ class _SearchWidgetState extends State<SearchWidget> {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            Colors.green[50],
-            Colors.blue[50],
-            Colors.red[50],
-            Colors.purple[50],
+            Color(0xFFE8F5E9), //green[50]
+            Color(0xFFE3F2FD), //blue[50]
+            Color(0xFFFFEBEE), //red[50]
+            Color(0xFFF3E5F5), //purple[50]
           ],
         ),
       ),

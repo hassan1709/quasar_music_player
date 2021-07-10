@@ -6,8 +6,8 @@ import '../commands/player_commands.dart';
 class PlayerWidget extends StatelessWidget {
   IconButton _iconButton(
     BuildContext context,
-    IconData iconData,
-    Function onPressed,
+    final IconData iconData,
+    final Function() onPressed,
   ) {
     return IconButton(
       icon: Icon(
@@ -43,10 +43,10 @@ class PlayerWidget extends StatelessWidget {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            Colors.green[100],
-            Colors.blue[100],
-            Colors.red[100],
-            Colors.purple[100],
+            Color(0xFFC8E6C9), //green[100]
+            Color(0xFFBBDEFB), //blue[100]
+            Color(0xFFFFCDD2), //red[100]
+            Color(0xFFE1BEE7), // purple[100]
           ],
         ),
       ),

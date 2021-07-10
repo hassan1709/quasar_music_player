@@ -10,13 +10,13 @@ class Track {
   final int trackTimeMillis;
 
   Track({
-    @required this.trackId,
-    @required this.url,
-    @required this.trackName,
-    @required this.artistName,
-    @required this.albumName,
-    @required this.artworkUrl,
-    @required this.trackTimeMillis,
+    required this.trackId,
+    required this.url,
+    required this.trackName,
+    required this.artistName,
+    required this.albumName,
+    required this.artworkUrl,
+    required this.trackTimeMillis,
   });
 
   String toString() {
