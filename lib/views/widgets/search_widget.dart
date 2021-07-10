@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../commands/search_tracks_commands.dart';
+import '../../commands/search_tracks_commands.dart';
 
 class SearchWidget extends StatefulWidget {
   @override

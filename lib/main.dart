@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'views/home_screen.dart';
 
 import './models/tracks.dart';
 import './models/player.dart';
 import './services/search_tracks_service.dart';
 import './commands/base_command.dart' as Commands;
-import './views/utilities/theme_B.dart';
+import './views/helpers/theme_B.dart';
+import 'views/screens/home_screen.dart';
+import 'views/authentication/login_screen.dart';
+import 'views/authentication/create_account_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Quasar Music Player',
             theme: theme,
-            home: HomeScreen(),
+            home: LoginScreen(), //HomeScreen(),
             routes: {},
           );
         },

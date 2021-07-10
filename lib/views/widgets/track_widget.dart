@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/track.dart';
-import '../models/tracks.dart';
-import '../commands/player_commands.dart';
+import '../../models/track.dart';
+import '../../models/tracks.dart';
+import '../../commands/player_commands.dart';
 
 class TrackWidget extends StatelessWidget {
   final Track track;

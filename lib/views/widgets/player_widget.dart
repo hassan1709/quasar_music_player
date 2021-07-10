@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/player.dart';
-import '../commands/player_commands.dart';
+import '../../models/player.dart';
+import '../../commands/player_commands.dart';
 
 class PlayerWidget extends StatelessWidget {
   IconButton _iconButton(

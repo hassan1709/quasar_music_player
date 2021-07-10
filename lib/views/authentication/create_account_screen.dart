@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import '../utilities/size_config.dart';
+import '../helpers//size_config.dart';
 import '../widgets/elevated_gradient_button_widget.dart';
 import '../widgets/background_one_widget.dart';
-import '../widgets/decorated_app_bar.dart';
+import '../helpers//decorated_app_bar.dart';
 
 class CreateAccount extends StatefulWidget {
   static const routeName = '/create-account';

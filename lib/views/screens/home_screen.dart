@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'search_widget.dart';
-import 'track_widget.dart';
-import 'player_widget.dart';
+import '../widgets/search_widget.dart';
+import '../widgets/track_widget.dart';
+import '../widgets/player_widget.dart';
 
-import '../models/tracks.dart';
-import '../models/track.dart';
-import '../models/player.dart';
+import '../../models/tracks.dart';
+import '../../models/track.dart';
+import '../../models/player.dart';
+import '../helpers/app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -16,21 +17,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
-        appBar: AppBar(
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/quasar.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Quasar Music Player',
-          ),
-          elevation: 1.0,
-        ),
+        appBar: appBar,
         body: Column(
           children: [
             SearchWidget(),

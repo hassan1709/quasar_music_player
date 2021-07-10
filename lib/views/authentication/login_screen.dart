@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../utilities/size_config.dart';
+import '../helpers//size_config.dart';
 import '../widgets/elevated_gradient_button_widget.dart';
 import '../widgets/background_one_widget.dart';
-import 'create_account.dart';
+import 'create_account_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
