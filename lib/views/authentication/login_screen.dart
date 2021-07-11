@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quasar_music_player/views/screens/home_screen.dart';
 import '../helpers//size_config.dart';
 import '../widgets/elevated_gradient_button_widget.dart';
 import '../widgets/background_one_widget.dart';
@@ -35,15 +36,11 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               BackgroundOneWidget(
                 featureColors: [
-                  // Color.fromRGBO(17, 141, 163, 1.0),
-                  // Color.fromRGBO(84, 184, 194, 1.0),
                   Colors.lightBlue.shade700,
                   Colors.lightBlue.shade800,
                   Colors.lightBlue.shade900
                 ],
                 containerColors: [
-                  // Color.fromRGBO(232, 237, 249, 1.0),
-                  // Color.fromRGBO(232, 237, 249, 1.0),
                   Colors.lightBlue.shade900,
                   Colors.lightBlue.shade800,
                   Colors.lightBlue.shade700,
@@ -92,7 +89,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           ElevatedGradientButtonWidget(
                             text: 'Login',
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, HomeScreen.routeName);
+                            },
                             iconData: Icons.login_rounded,
                           ),
                         ],

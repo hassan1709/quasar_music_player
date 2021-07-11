@@ -10,6 +10,7 @@ import '../../models/player.dart';
 import '../helpers/app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const routeName = '/home-screen';
   @override
   Widget build(BuildContext context) {
     List<Track> tracks = Provider.of<Tracks>(context, listen: true).tracks;

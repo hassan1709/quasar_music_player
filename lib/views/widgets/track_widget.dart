@@ -40,12 +40,16 @@ class TrackWidget extends StatelessWidget {
           title: Text(
             track.trackName,
             style: TextStyle(
-                color: Theme.of(context).primaryTextTheme.headline2!.color),
+              fontSize: Theme.of(context).textTheme.headline2!.fontSize,
+              color: Theme.of(context).textTheme.headline2!.color,
+            ),
           ),
           subtitle: Text(
             track.artistName + '\n${track.albumName}',
             style: TextStyle(
-                color: Theme.of(context).primaryTextTheme.headline3!.color),
+              fontSize: Theme.of(context).textTheme.headline3!.fontSize,
+              color: Theme.of(context).textTheme.headline3!.color,
+            ),
           ),
           isThreeLine: true,
           leading: CircleAvatar(
@@ -56,18 +60,17 @@ class TrackWidget extends StatelessWidget {
               Text(
                 trackTime.toStringAsFixed(2),
                 style: TextStyle(
-                  fontSize:
-                      Theme.of(context).primaryTextTheme.headline4!.fontSize,
-                  color: Theme.of(context).primaryTextTheme.headline4!.color,
+                  fontSize: Theme.of(context).textTheme.headline4!.fontSize,
+                  color: Theme.of(context).textTheme.headline4!.color,
                 ),
               ),
               SizedBox(
-                height: 15.0,
+                height: 10.0,
               ),
               if (isSelectedTrack(track.trackId, context))
                 Icon(
                   Icons.multitrack_audio_sharp,
-                  color: Theme.of(context).primaryTextTheme.headline4!.color,
+                  color: Theme.of(context).textTheme.headline4!.color,
                 ),
             ],
           ),

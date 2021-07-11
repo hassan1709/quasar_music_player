@@ -12,10 +12,6 @@ class SearchTracksCommands extends BaseCommand {
       // Process the response
       final serializedData = json.decode(response.body) as Map<String, dynamic>;
 
-      if (serializedData == null) {
-        return;
-      }
-
       final List<Track> tracks = [];
       final List extractingTracks = serializedData['results'];
 

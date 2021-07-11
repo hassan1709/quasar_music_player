@@ -5,7 +5,7 @@ import './models/tracks.dart';
 import './models/player.dart';
 import './services/search_tracks_service.dart';
 import './commands/base_command.dart' as Commands;
-import './views/helpers/theme_B.dart';
+import './views/helpers/theme_a.dart';
 import 'views/screens/home_screen.dart';
 import 'views/authentication/login_screen.dart';
 import 'views/authentication/create_account_screen.dart';
@@ -31,8 +31,12 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Quasar Music Player',
             theme: theme,
-            home: LoginScreen(), //HomeScreen(),
-            routes: {},
+            home: LoginScreen(),
+            // home: HomeScreen(),
+            routes: {
+              HomeScreen.routeName: (ctx) => HomeScreen(),
+              CreateAccount.routeName: (ctx) => CreateAccount(),
+            },
           );
         },
       ),

@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
 
+final _coolGreyColor = Color.fromRGBO(58, 66, 86, 1.0);
+final _coolGreyColorLighter = Color.fromRGBO(64, 75, 96, .9);
 final _primarySwatchColor = Colors.deepOrange;
-final _primaryColor = Colors.deepOrange.shade800;
-final _accentColor = Colors.deepOrangeAccent.shade400;
+final _primaryColor = _coolGreyColor; //Colors.deepOrange.shade800;
+final _accentColor = _coolGreyColorLighter; //Colors.deepOrangeAccent.shade400;
 final _errorColor = Colors.redAccent.shade700;
 final _hintColor = Colors.white;
 final _buttonColor = Colors.deepOrange;
 final _highlightColor = Colors.deepOrange.shade300;
-final _elevatedButtonTextStyle = TextStyle(
+
+final _elevatedButtonTextStyle = const TextStyle(
   color: Colors.white,
   fontSize: 18.0,
   fontWeight: FontWeight.bold,
 );
 
-final _textButtonTextStyle = TextStyle(
+final _textButtonTextStyle = const TextStyle(
   color: Colors.white,
   fontSize: 15.0,
   fontWeight: FontWeight.bold,
 );
 
-final _textFieldTextStyle = TextStyle(
+final _textFieldTextStyle = const TextStyle(
   color: Colors.white,
   fontSize: 16.0,
-);
-final _labelTextStyle = TextStyle(
-  fontSize: 15.0,
-  color: Colors.deepOrange.shade800,
 );
 
 final theme = ThemeData(
@@ -37,6 +36,14 @@ final theme = ThemeData(
   hintColor: _hintColor,
   buttonColor: _buttonColor,
 
+  ///TODO CardTheme
+  //cardTheme: ,
+
+  primaryIconTheme: IconThemeData(
+    color: _coolGreyColor,
+    size: 30.0,
+  ),
+
   iconTheme: const IconThemeData(
     color: Colors.white,
     size: 30.0,
@@ -46,6 +53,28 @@ final theme = ThemeData(
     bodyText2: _elevatedButtonTextStyle,
     //text style for textFields
     subtitle1: _textFieldTextStyle,
+
+    headline1: const TextStyle(
+      color: Colors.green,
+      fontSize: 20.0,
+    ),
+    headline2: const TextStyle(
+      color: Colors.deepOrange,
+      fontSize: 15.0,
+      fontWeight: FontWeight.bold,
+    ),
+    headline3: const TextStyle(
+      color: Colors.white60,
+      fontSize: 13.0,
+    ),
+    headline4: const TextStyle(
+      color: Colors.lightBlueAccent,
+      fontSize: 12.0,
+    ),
+    caption: TextStyle(
+      color: _coolGreyColor,
+      fontSize: 18.0,
+    ),
   ),
   // Styling textFields and textFormFields (except the content text)
   inputDecorationTheme: InputDecorationTheme(
@@ -58,13 +87,13 @@ final theme = ThemeData(
     ),
     focusedBorder: UnderlineInputBorder(
       borderRadius: BorderRadius.circular(15.0),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         style: BorderStyle.none,
       ),
     ),
     enabledBorder: UnderlineInputBorder(
       borderRadius: BorderRadius.circular(15.0),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         style: BorderStyle.none,
       ),
     ),
@@ -73,8 +102,8 @@ final theme = ThemeData(
       color: _primaryColor,
     ),
     hintStyle: TextStyle(
-        //color: _accentColor,
-        ),
+      color: _hintColor,
+    ),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
@@ -83,16 +112,16 @@ final theme = ThemeData(
       ),
       elevation: 10.0,
       textStyle: _elevatedButtonTextStyle,
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
     ),
   ),
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       primary: Colors.white,
-      padding: EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(15.0),
       textStyle: _textButtonTextStyle,
       //elevation: 1.0,
-      backgroundColor: Color.fromRGBO(255, 87, 34, 0.3),
+      backgroundColor: const Color.fromRGBO(255, 87, 34, 0.3),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),

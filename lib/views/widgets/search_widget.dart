@@ -55,13 +55,12 @@ class _SearchWidgetState extends State<SearchWidget> {
           Expanded(
             child: TextField(
               controller: textFieldController,
+              style: Theme.of(context).textTheme.caption,
               decoration: InputDecoration(
-                border: InputBorder.none,
-                focusedBorder: InputBorder.none,
-                enabledBorder: InputBorder.none,
-                errorBorder: InputBorder.none,
-                disabledBorder: InputBorder.none,
                 hintText: 'Search by artist',
+                hintStyle:
+                    TextStyle(color: Theme.of(context).primaryIconTheme.color),
+                filled: false,
                 contentPadding: EdgeInsets.only(
                   left: 15,
                   right: 15,
@@ -72,7 +71,11 @@ class _SearchWidgetState extends State<SearchWidget> {
           isLoading
               ? CircularProgressIndicator()
               : IconButton(
-                  icon: Icon(Icons.search),
+                  icon: Icon(
+                    Icons.search,
+                    color: Theme.of(context).primaryIconTheme.color,
+                    size: Theme.of(context).primaryIconTheme.size,
+                  ),
                   onPressed: () {
                     performSearch(textFieldController.text);
                   },
