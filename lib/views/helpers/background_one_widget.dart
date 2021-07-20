@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../helpers/size_config.dart';
+import 'size_config.dart';
 
 class BackgroundOneWidget extends StatelessWidget {
   final bool inverted;

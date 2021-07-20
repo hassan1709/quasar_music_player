@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DecoratedAppBar {
-  static AppBar appBar(BuildContext context, String title) {
+  static AppBar appBar(
+      BuildContext context, String title, List<Widget>? actions) {
     return AppBar(
       title: Text(title),
+      actions: actions,
       flexibleSpace: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

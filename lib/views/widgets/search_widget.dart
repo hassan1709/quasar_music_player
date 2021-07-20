@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quasar_music_player/commands/authentication_commands.dart';
 import '../../commands/search_tracks_commands.dart';
 
 class SearchWidget extends StatefulWidget {
@@ -77,6 +78,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                     size: Theme.of(context).primaryIconTheme.size,
                   ),
                   onPressed: () {
+                    AuthenticationCommands().signOut();
                     performSearch(textFieldController.text);
                   },
                 ),

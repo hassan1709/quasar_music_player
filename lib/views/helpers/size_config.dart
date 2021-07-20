@@ -67,9 +67,9 @@ class SizeConfig {
     _safeBlockHorizontal = (_screenWidth - mediaQueryPaddingHorizontal) / 100;
     _safeBlockVertical = (_screenHeight - mediaQueryPaddingVertical) / 100;
 
-    print('_safeAreaHorizontal ' + _safeAreaHorizontal.toString());
-    print('_safeAreaVertical ' + _safeAreaVertical.toString());
-    print('safeBlockHorizontal ' + _safeBlockHorizontal.toString());
-    print('safeBlockVertical ' + _safeBlockVertical.toString());
+    // print('_safeAreaHorizontal ' + _safeAreaHorizontal.toString());
+    // print('_safeAreaVertical ' + _safeAreaVertical.toString());
+    // print('safeBlockHorizontal ' + _safeBlockHorizontal.toString());
+    // print('safeBlockVertical ' + _safeBlockVertical.toString());
   }
 }

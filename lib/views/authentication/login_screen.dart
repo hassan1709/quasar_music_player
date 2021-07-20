@@ -1,28 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:quasar_music_player/views/screens/home_screen.dart';
 import '../helpers//size_config.dart';
-import '../widgets/elevated_gradient_button_widget.dart';
-import '../widgets/background_one_widget.dart';
-import 'create_account_screen.dart';
+import '../helpers/elevated_gradient_button_widget.dart';
+import '../helpers/background_one_widget.dart';
+import '../helpers/message.dart';
+import '../../commands/authentication_commands.dart';
+import 'authentication_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  static const routeName = '/login-screen';
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
+  bool _isAuthenticating = false;
   var _userEmail;
   var _userPassword;
 
-  void submit() {
+  void submit() async {
     final isValidForm = _formKey.currentState!.validate();
+    bool success = false;
 
     if (isValidForm) {
       _formKey.currentState!.save();
       FocusScope.of(context).unfocus(); //Close soft keyboard
 
-      ///TODO: call command to log in
+      try {
+        setState(() {
+          _isAuthenticating = true;
+        });
+
+        // success =
+        //     await AuthenticationCommands().signIn(_userEmail, _userPassword);
+
+        setState(() {
+          _isAuthenticating = false;
+        });
+
+        if (success)
+          Navigator.pushNamed(context, HomeScreen.routeName);
+        else
+          Message.showErrorSnackBar(context,
+              'Something went wrong. Create an account if you don\'t have one.');
+      } catch (e) {
+        setState(() {
+          _isAuthenticating = false;
+        });
+
+        Message.showErrorSnackBar(context, e.toString());
+      }
     }
   }
 
@@ -55,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       key: _formKey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
+                        children: <Widget>[
                           TextFormField(
                             key: ValueKey('email'),
                             autocorrect: false,
@@ -90,8 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ElevatedGradientButtonWidget(
                             text: 'Login',
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, HomeScreen.routeName);
+                              submit();
                             },
                             iconData: Icons.login_rounded,
                           ),
@@ -115,7 +142,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     TextButton.icon(
                       onPressed: () {
-                        Navigator.pushNamed(context, CreateAccount.routeName);
+                        Navigator.pushNamed(
+                            context, AuthenticationScreen.routeName);
                       },
                       icon: Icon(Icons.account_circle_rounded),
                       label: Text('Create Account'),

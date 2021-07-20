@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "quasarmusicplayercbec8254": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
