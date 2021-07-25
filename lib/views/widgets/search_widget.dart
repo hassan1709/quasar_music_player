@@ -78,7 +78,6 @@ class _SearchWidgetState extends State<SearchWidget> {
                     size: Theme.of(context).primaryIconTheme.size,
                   ),
                   onPressed: () {
-                    AuthenticationCommands().signOut();
                     performSearch(textFieldController.text);
                   },
                 ),

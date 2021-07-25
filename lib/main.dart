@@ -49,8 +49,8 @@ class MyApp extends StatelessWidget {
       child: Builder(
         builder: (context) {
           Commands.init(context);
-          AuthenticationCommands().getCurrentUser();
-          //AuthenticationCommands().fetchSession();
+          //AuthenticationCommands().getCurrentUser();
+          AuthenticationCommands().fetchSession();
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Quasar Music Player',
