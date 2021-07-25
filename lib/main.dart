@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           //AuthenticationCommands().fetchSession();
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Quasar Music Player',
+            title: 'Music Player',
             theme: theme,
             home: context.watch<User>().isAuthenticated
                 ? HomeScreen()
