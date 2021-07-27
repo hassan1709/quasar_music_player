@@ -1,14 +1,14 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-quasarmusicplayer-staging-133740-authRole",
-      "UnauthRoleArn": "arn:aws:iam::577022460750:role/amplify-quasarmusicplayer-staging-133740-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::577022460750:role/amplify-quasarmusicplayer-staging-133740-authRole",
+      "AuthRoleName": "amplify-quasarmusicplayer-dev-64643-authRole",
+      "UnauthRoleArn": "arn:aws:iam::577022460750:role/amplify-quasarmusicplayer-dev-64643-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::577022460750:role/amplify-quasarmusicplayer-dev-64643-authRole",
       "Region": "ap-southeast-2",
-      "DeploymentBucketName": "amplify-quasarmusicplayer-staging-133740-deployment",
-      "UnauthRoleName": "amplify-quasarmusicplayer-staging-133740-unauthRole",
-      "StackName": "amplify-quasarmusicplayer-staging-133740",
-      "StackId": "arn:aws:cloudformation:ap-southeast-2:577022460750:stack/amplify-quasarmusicplayer-staging-133740/a8fe5150-e4a8-11eb-a372-0a1c6b610dfc",
+      "DeploymentBucketName": "amplify-quasarmusicplayer-dev-64643-deployment",
+      "UnauthRoleName": "amplify-quasarmusicplayer-dev-64643-unauthRole",
+      "StackName": "amplify-quasarmusicplayer-dev-64643",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:577022460750:stack/amplify-quasarmusicplayer-dev-64643/130b5250-ed14-11eb-8c14-0aaf2d46a68a",
       "AmplifyAppId": "d3rm67ht8c4fbz"
     }
   },
@@ -18,21 +18,21 @@
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-quasarmusicplayer-staging-133740-deployment/amplify-cfn-templates/auth/quasarmusicplayercbec8254-cloudformation-template.yml",
-        "logicalId": "authquasarmusicplayercbec8254"
-      },
-      "lastPushTimeStamp": "2021-07-20T12:12:32.273Z",
       "output": {
-        "UserPoolId": "ap-southeast-2_esoFCJuIr",
-        "AppClientIDWeb": "5ukq68ofeabu095jio5duvba4k",
-        "AppClientID": "66lpbs6ohk2hjv9k9n3k4i7uto",
-        "IdentityPoolId": "ap-southeast-2:1a9eb3d1-6526-4119-aae0-60c1572ca8df",
-        "UserPoolArn": "arn:aws:cognito-idp:ap-southeast-2:577022460750:userpool/ap-southeast-2_esoFCJuIr",
-        "IdentityPoolName": "quasarmusicplayercbec8254_identitypool_cbec8254__staging",
+        "UserPoolId": "ap-southeast-2_Fd5bKVAbV",
+        "AppClientIDWeb": "laijpks1kq5sgf2jvp7jt975c",
+        "AppClientID": "70isv9a4c4627ng2t0l7vs4rds",
+        "IdentityPoolId": "ap-southeast-2:f8e41171-bd3f-48b9-8b2c-fdc854bda8a3",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-southeast-2:577022460750:userpool/ap-southeast-2_Fd5bKVAbV",
+        "IdentityPoolName": "quasarmusicplayercbec8254_identitypool_cbec8254__dev",
         "UserPoolName": "quasarmusicplayercbec8254_userpool_cbec8254"
       },
-      "lastPushDirHash": "Ju+Oo6NwD1s6vdwuNjT9UCJ+ueE="
+      "lastPushTimeStamp": "2021-07-27T08:24:25.364Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-quasarmusicplayer-dev-64643-deployment/amplify-cfn-templates/auth/quasarmusicplayercbec8254-cloudformation-template.yml",
+        "logicalId": "authquasarmusicplayercbec8254"
+      },
+      "lastPushDirHash": "t4W1njXr1Z2F+ve3/aeuRwXL7vo="
     }
   }
 }

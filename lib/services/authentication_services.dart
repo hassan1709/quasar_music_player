@@ -14,6 +14,8 @@ class AuthenticationServices {
       );
 
       return result.isSignUpComplete;
+    } on InvalidPasswordException {
+      throw AuthenticationException.invalidPasswordException();
     } catch (e) {
       print(e);
       throw (e);

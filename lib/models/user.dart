@@ -5,6 +5,7 @@ class User extends ChangeNotifier {
   late String _id;
   late String _email;
   late String _name;
+  late String _password;
 
   bool get isAuthenticated {
     return _isAuthenticated;
@@ -39,6 +40,15 @@ class User extends ChangeNotifier {
 
   set email(String email) {
     _email = email;
+    notifyListeners();
+  }
+
+  String get password {
+    return _password;
+  }
+
+  set password(String password) {
+    _password = password;
     notifyListeners();
   }
 }

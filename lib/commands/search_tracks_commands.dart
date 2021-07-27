@@ -16,15 +16,17 @@ class SearchTracksCommands extends BaseCommand {
       final List extractingTracks = serializedData['results'];
 
       extractingTracks.forEach((element) {
-        tracks.add(Track(
-          trackId: element['trackId'],
-          url: element['previewUrl'],
-          trackName: element['trackName'],
-          artistName: element['artistName'],
-          albumName: element['collectionName'],
-          artworkUrl: element['artworkUrl100'],
-          trackTimeMillis: element['trackTimeMillis'],
-        ));
+        if (element['trackId'] != null) {
+          tracks.add(Track(
+            trackId: element['trackId'],
+            url: element['previewUrl'] ?? '',
+            trackName: element['trackName'] ?? '',
+            artistName: element['artistName'] ?? '',
+            albumName: element['collectionName'] ?? '',
+            artworkUrl: element['artworkUrl100'] ?? '',
+            trackTimeMillis: element['trackTimeMillis'] ?? '',
+          ));
+        }
       });
 
       // Inject the model with the tracks obtained

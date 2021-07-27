@@ -49,15 +49,16 @@ class MyApp extends StatelessWidget {
       child: Builder(
         builder: (context) {
           Commands.init(context);
-          AuthenticationCommands().getCurrentUser();
-          //AuthenticationCommands().fetchSession();
+          //AuthenticationCommands().getCurrentUser();
+          AuthenticationCommands().fetchSession();
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Music Player',
             theme: theme,
-            home: context.watch<User>().isAuthenticated
+            home: Provider.of<User>(context, listen: true).isAuthenticated
                 ? HomeScreen()
                 : AuthenticationScreen(),
+            // home: HomeScreen(),
             routes: {
               HomeScreen.routeName: (ctx) => HomeScreen(),
               AuthenticationScreen.routeName: (ctx) => AuthenticationScreen(),
@@ -70,29 +71,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// Consumer<User>(
-// builder: (ctx, _user, _) => MaterialApp(
-// debugShowCheckedModeBanner: false,
-// title: 'Quasar Music Player',
-// theme: theme,
-// home: _user.isAuthenticated
-// ? HomeScreen()
-//     : FutureBuilder(
-// future: AuthenticationCommands().getCurrentUser(),
-// builder: (ctx, authSnapshot) =>
-// authSnapshot.connectionState ==
-// ConnectionState.waiting
-// ? Center(
-// child: CircularProgressIndicator(),
-// )
-// : AuthenticationScreen(),
-// ),
-// routes: {
-// HomeScreen.routeName: (ctx) => HomeScreen(),
-// AuthenticationScreen.routeName: (ctx) => AuthenticationScreen(),
-// SignUpConfirmationScreen.routeName: (ctx) =>
-// SignUpConfirmationScreen(),
-// },
-// ),
-// );

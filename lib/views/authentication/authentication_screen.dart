@@ -194,7 +194,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           TextFormField(
                             key: ValueKey('password'),
                             obscureText: true,
-                            validator: validatePassword,
+                            // validator: validatePassword,
                             onSaved: (value) {
                               _userPassword = value;
                             },

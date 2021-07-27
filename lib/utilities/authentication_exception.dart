@@ -22,4 +22,9 @@ class AuthenticationException implements Exception {
     throw AuthenticationException(
         'Email or password incorrect. Please enter correct email and password');
   }
+
+  static Exception invalidPasswordException() {
+    throw AuthenticationException(
+        'The password given is not valid. Please enter a valid password. At least 8 characters including uppercase and lowercase.');
+  }
 }

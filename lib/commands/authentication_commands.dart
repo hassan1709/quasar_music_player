@@ -1,10 +1,10 @@
 import 'base_command.dart';
 
 class AuthenticationCommands extends BaseCommand {
-  static final AuthenticationCommands _authenticationCommands =
-      AuthenticationCommands._internal();
-  factory AuthenticationCommands() => _authenticationCommands;
-  AuthenticationCommands._internal();
+  // static final AuthenticationCommands _authenticationCommands =
+  //     AuthenticationCommands._internal();
+  // factory AuthenticationCommands() => _authenticationCommands;
+  // AuthenticationCommands._internal();
 
   Future<void> getCurrentUser() async {
     try {
@@ -32,6 +32,7 @@ class AuthenticationCommands extends BaseCommand {
       if (result) {
         user.name = username;
         user.email = email;
+        user.password = password;
       }
       return result;
     } catch (e) {
@@ -41,8 +42,10 @@ class AuthenticationCommands extends BaseCommand {
 
   Future<void> confirmSignUp(String confirmationCode) async {
     try {
-      user.isAuthenticated = await authenticationServices.confirmSignUp(
+      bool isSignUpComplete = await authenticationServices.confirmSignUp(
           user.email, confirmationCode);
+
+      if (isSignUpComplete) await signIn(user.email, user.password);
     } catch (e) {
       throw e;
     }
