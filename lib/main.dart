@@ -1,9 +1,6 @@
-import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
-import 'package:amplify_flutter/amplify.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'amplifyconfiguration.dart';
 import './models/tracks.dart';
 import './models/player.dart';
 import './models/user.dart';
@@ -17,21 +14,7 @@ import 'views/authentication/authentication_screen.dart';
 import 'views/authentication/sign_up_confirmation_screen.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await configureAmplify();
   runApp(MyApp());
-}
-
-Future<void> configureAmplify() async {
-  Amplify.addPlugins([AmplifyAuthCognito()]);
-
-  try {
-    if (!Amplify.isConfigured) await Amplify.configure(amplifyconfig);
-  } on AmplifyAlreadyConfiguredException {
-    print("Amplify already configured");
-  } catch (e) {
-    print(e.toString());
-  }
 }
 
 class MyApp extends StatelessWidget {
@@ -49,8 +32,6 @@ class MyApp extends StatelessWidget {
       child: Builder(
         builder: (context) {
           Commands.init(context);
-          //AuthenticationCommands().getCurrentUser();
-          AuthenticationCommands().fetchSession();
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Music Player',
