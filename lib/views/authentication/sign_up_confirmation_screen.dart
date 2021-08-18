@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../helpers//size_config.dart';
 import '../helpers/elevated_gradient_button_widget.dart';
 import '../helpers/background_one_widget.dart';
 import '../helpers/message.dart';
 import '../../commands/authentication_commands.dart';
-import 'authentication_screen.dart';
-import 'login_screen.dart';
+import '../../models/user_model.dart';
+import '../authentication/authentication_screen.dart';
 
 class SignUpConfirmationScreen extends StatefulWidget {
   static const routeName = '/confirmation-screen';
@@ -23,7 +24,8 @@ class _SignUpConfirmationState extends State<SignUpConfirmationScreen> {
         _isLoading = true;
       });
 
-      await AuthenticationCommands().confirmSignUp(_textController.text);
+      context.read<AuthenticationCommands>().verifyEmail(
+          context.read<UserModel>().email, _textController.text.trim());
 
       setState(() {
         _isLoading = false;

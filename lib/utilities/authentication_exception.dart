@@ -8,6 +8,10 @@ class AuthenticationException implements Exception {
     return message;
   }
 
+  static Exception unknownException() {
+    throw AuthenticationException('Something went wrong.');
+  }
+
   static Exception userNotFound() {
     throw AuthenticationException(
         'User not found in the system. Please enter correct details.');
@@ -26,5 +30,14 @@ class AuthenticationException implements Exception {
   static Exception invalidPasswordException() {
     throw AuthenticationException(
         'The password given is not valid. Please enter a valid password. At least 8 characters including uppercase and lowercase.');
+  }
+
+  static Exception weakPassword() {
+    throw AuthenticationException('The password provided is too weak.');
+  }
+
+  static Exception emailInUse() {
+    throw AuthenticationException(
+        'There account already exists for that email. Please type another email or sign in.');
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quasar_music_player/commands/authentication_commands.dart';
+import '../../commands/authentication_commands.dart';
 import '../widgets/search_widget.dart';
 import '../widgets/track_widget.dart';
 import '../widgets/player_widget.dart';
@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.logout_rounded),
             onPressed: () {
-              AuthenticationCommands().signOut();
+              context.read<AuthenticationCommands>().signOut();
             },
           ),
         ]),

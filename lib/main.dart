@@ -1,19 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
+import './models/user_model.dart';
 import './models/tracks.dart';
 import './models/player.dart';
-import './models/user.dart';
 import './services/search_tracks_service.dart';
-import './services/authentication_services.dart';
 import './commands/base_command.dart' as Commands;
-import 'commands/authentication_commands.dart';
+import './commands/authentication_commands.dart';
 import './views/helpers/theme_a.dart';
 import 'views/screens/home_screen.dart';
 import 'views/authentication/authentication_screen.dart';
-import 'views/authentication/sign_up_confirmation_screen.dart';
+import '../views/authentication/authentication_wrapper.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -25,9 +28,14 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => Tracks()),
         ChangeNotifierProvider(create: (_) => Player()),
-        ChangeNotifierProvider(create: (_) => User()),
+        Provider(create: (_) => UserModel()),
         Provider(create: (_) => SearchTracksService()),
-        Provider(create: (_) => AuthenticationServices()),
+        Provider(create: (_) => AuthenticationCommands(FirebaseAuth.instance)),
+        /*StreamProvider(
+          create: (context) =>
+              context.read<AuthenticationCommands>().authStateChanges,
+          initialData: context.read<AuthenticationCommands>().currentUser,
+        ),*/
       ],
       child: Builder(
         builder: (context) {
@@ -36,15 +44,10 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Music Player',
             theme: theme,
-            home: Provider.of<User>(context, listen: true).isAuthenticated
-                ? HomeScreen()
-                : AuthenticationScreen(),
-            // home: HomeScreen(),
+            home: AuthenticationWrapper(),
             routes: {
               HomeScreen.routeName: (ctx) => HomeScreen(),
               AuthenticationScreen.routeName: (ctx) => AuthenticationScreen(),
-              SignUpConfirmationScreen.routeName: (ctx) =>
-                  SignUpConfirmationScreen(),
             },
           );
         },

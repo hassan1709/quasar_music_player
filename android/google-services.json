@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "793736020699",
+    "project_id": "quasar-music-player",
+    "storage_bucket": "quasar-music-player.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793736020699:android:4c40a9ba88903a404002fe",
+        "android_client_info": {
+          "package_name": "net.appdone.quasar_music_player"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793736020699-5lelgeilbo3rqnsi4gcndj61pgidvcrt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH7g9ihcsno9o-L9Yz-Mhf88_Vg86yVKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793736020699-5lelgeilbo3rqnsi4gcndj61pgidvcrt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

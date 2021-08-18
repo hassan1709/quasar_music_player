@@ -6,10 +6,8 @@ import '../helpers/message.dart';
 import '../helpers//size_config.dart';
 import '../helpers/elevated_gradient_button_widget.dart';
 import '../helpers/background_one_widget.dart';
-import '../helpers//decorated_app_bar.dart';
 import '../../commands/authentication_commands.dart';
 import 'sign_up_confirmation_screen.dart';
-import '../screens/home_screen.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   static const routeName = '/create-account';
@@ -68,12 +66,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         setState(() {
           _isLoading = true;
         });
-        print('_userName: $_userName');
-        print('_userEmail: $_userEmail');
-        print('_userPassword: $_userPassword');
 
-        success = await AuthenticationCommands()
-            .signUp(_userName, _userEmail, _userPassword);
+        success =
+            await context.read<AuthenticationCommands>().sendOTP(_userEmail);
+
+        if (success)
+          success = await context
+              .read<AuthenticationCommands>()
+              .signUp(_userName, _userEmail, _userPassword);
 
         setState(() {
           _isLoading = false;
@@ -102,10 +102,10 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
       setState(() {
         _isLoading = true;
       });
-      print('_userEmail: $_userEmail');
-      print('_userPassword: $_userPassword');
 
-      await AuthenticationCommands().signIn(_userEmail, _userPassword);
+      await context
+          .read<AuthenticationCommands>()
+          .signIn(_userEmail, _userPassword);
 
       setState(() {
         _isLoading = false;
@@ -194,7 +194,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           TextFormField(
                             key: ValueKey('password'),
                             obscureText: true,
-                            // validator: validatePassword,
+                            validator: validatePassword,
                             onSaved: (value) {
                               _userPassword = value;
                             },
