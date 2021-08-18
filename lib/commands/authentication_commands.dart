@@ -70,9 +70,11 @@ class AuthenticationCommands extends BaseCommand {
     return await EmailAuth.sendOtp(receiverMail: email);
   }
 
-  bool verifyEmail(String email, String otp) {
+  Future<bool> verifyEmail(String email, String otp) async {
     if (EmailAuth.validate(receiverMail: email, userOTP: otp)) {
       _authenticationIsVerified = true;
+
+      await currentUser!.reload();
 
       return true;
     }

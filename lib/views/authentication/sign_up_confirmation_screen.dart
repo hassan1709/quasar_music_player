@@ -24,7 +24,7 @@ class _SignUpConfirmationState extends State<SignUpConfirmationScreen> {
         _isLoading = true;
       });
 
-      context.read<AuthenticationCommands>().verifyEmail(
+      bool success = await context.read<AuthenticationCommands>().verifyEmail(
           context.read<UserModel>().email, _textController.text.trim());
 
       setState(() {

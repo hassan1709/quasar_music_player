@@ -12,7 +12,7 @@ class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: context.read<AuthenticationCommands>().authStateChanges,
+        stream: context.read<AuthenticationCommands>().userStateChanges,
         builder: (ctx, userSnapshot) {
           if (userSnapshot.connectionState == ConnectionState.waiting)
             return SplashScreen();
